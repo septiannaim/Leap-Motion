@@ -1,14 +1,8 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import Sidebar from "@/app/(user)/components/Sidebar";
 import PrelineScript from "@/app/components/PrelineScript";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Leap Motion | Vocafe",
-  description: "Leap Motion",
-};
 
 export default function RootLayout({
   children,
@@ -17,7 +11,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Sidebar />
+        {children}
+      </body>
       <PrelineScript />
     </html>
   );
